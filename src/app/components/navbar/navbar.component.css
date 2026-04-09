@@ -1,0 +1,210 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--navbar-bg, #1a1a2e);
+  box-shadow: 0 2px 8px var(--navbar-shadow, rgba(0, 0, 0, 0.15));
+  font-family: var(--font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--brand-color, #e94560);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.navbar-brand:hover {
+  color: var(--brand-hover-color, #ff6b81);
+}
+
+.navbar-brand-icon {
+  font-size: 1.75rem;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: var(--nav-link-color, #eaeaea);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--nav-link-hover-color, #ffffff);
+  background-color: var(--nav-link-hover-bg, rgba(233, 69, 96, 0.15));
+}
+
+.navbar-links a.active {
+  color: var(--nav-link-active-color, #e94560);
+  background-color: var(--nav-link-active-bg, rgba(233, 69, 96, 0.1));
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-cta {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background-color: var(--cta-bg, #e94560);
+  color: var(--cta-color, #ffffff);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.navbar-cta:hover {
+  background-color: var(--cta-hover-bg, #c73e54);
+  transform: translateY(-1px);
+}
+
+.navbar-cta:active {
+  transform: translateY(0);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.hamburger:hover {
+  background-color: var(--hamburger-hover-bg, rgba(255, 255, 255, 0.1));
+}
+
+.hamburger .bar {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background-color: var(--hamburger-bar-color, #eaeaea);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--navbar-bg, #1a1a2e);
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 12px var(--navbar-shadow, rgba(0, 0, 0, 0.15));
+    gap: 0;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-links a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+  }
+
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-actions.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + var(--mobile-links-height, 0px));
+    left: 0;
+    right: 0;
+    background-color: var(--navbar-bg, #1a1a2e);
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .navbar {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .navbar-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .navbar-brand-icon {
+    font-size: 1.4rem;
+  }
+}

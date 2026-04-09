@@ -1,0 +1,175 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding: var(--spacing-lg, 2rem);
+  background-color: var(--bg-secondary, #f5f5f5);
+}
+
+.register-card {
+  background-color: var(--bg-primary, #ffffff);
+  border-radius: var(--border-radius-lg, 12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: var(--spacing-xl, 2.5rem);
+  width: 100%;
+  max-width: 440px;
+}
+
+.register-card h2 {
+  margin: 0 0 var(--spacing-sm, 0.5rem) 0;
+  font-size: var(--font-size-2xl, 1.75rem);
+  font-weight: 700;
+  color: var(--text-primary, #1a1a2e);
+  text-align: center;
+}
+
+.register-card .subtitle {
+  margin: 0 0 var(--spacing-lg, 2rem) 0;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--text-secondary, #6c6c80);
+  text-align: center;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 1rem);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 0.25rem);
+}
+
+.form-group label {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--text-primary, #1a1a2e);
+}
+
+.form-group input {
+  padding: var(--spacing-sm, 0.75rem) var(--spacing-md, 1rem);
+  border: 1px solid var(--border-color, #d1d1e0);
+  border-radius: var(--border-radius-md, 8px);
+  font-size: var(--font-size-base, 1rem);
+  color: var(--text-primary, #1a1a2e);
+  background-color: var(--bg-primary, #ffffff);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted, #a0a0b0);
+}
+
+.form-group input:focus {
+  border-color: var(--color-primary, #6c63ff);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+.form-group input.ng-invalid.ng-touched,
+.form-group input.invalid {
+  border-color: var(--color-error, #e74c3c);
+}
+
+.form-group input.ng-invalid.ng-touched:focus,
+.form-group input.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+}
+
+.error-message {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-error, #e74c3c);
+  margin-top: var(--spacing-xs, 0.25rem);
+  min-height: 1rem;
+  line-height: 1rem;
+}
+
+.form-error {
+  background-color: rgba(231, 76, 60, 0.08);
+  border: 1px solid var(--color-error, #e74c3c);
+  border-radius: var(--border-radius-md, 8px);
+  padding: var(--spacing-sm, 0.75rem) var(--spacing-md, 1rem);
+  color: var(--color-error, #e74c3c);
+  font-size: var(--font-size-sm, 0.875rem);
+  text-align: center;
+  margin-bottom: var(--spacing-sm, 0.5rem);
+}
+
+.submit-btn {
+  padding: var(--spacing-sm, 0.75rem) var(--spacing-md, 1rem);
+  background-color: var(--color-primary, #6c63ff);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius-md, 8px);
+  font-size: var(--font-size-base, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  margin-top: var(--spacing-sm, 0.5rem);
+  width: 100%;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: var(--color-primary-dark, #5a52d5);
+}
+
+.submit-btn:active:not(:disabled) {
+  background-color: var(--color-primary-darker, #4a43b5);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-btn:focus-visible {
+  outline: 2px solid var(--color-primary, #6c63ff);
+  outline-offset: 2px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: var(--spacing-lg, 1.5rem);
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--text-secondary, #6c6c80);
+}
+
+.login-link a {
+  color: var(--color-primary, #6c63ff);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.login-link a:hover {
+  color: var(--color-primary-dark, #5a52d5);
+  text-decoration: underline;
+}
+
+.login-link a:focus-visible {
+  outline: 2px solid var(--color-primary, #6c63ff);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (max-width: 480px) {
+  :host {
+    padding: var(--spacing-md, 1rem);
+    align-items: flex-start;
+    padding-top: var(--spacing-xl, 2.5rem);
+  }
+
+  .register-card {
+    padding: var(--spacing-lg, 1.5rem);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .register-card h2 {
+    font-size: var(--font-size-xl, 1.5rem);
+  }
+}
